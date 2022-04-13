@@ -11,6 +11,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dosis:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/css/com.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <style>
+      .whatsapp-link {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 1px 1px 2px #888;
+        z-index: 1000;
+    }
+ 
+    .fa-whatsapp {
+      margin-top: 16px;
+    }
+    </style>
 
     <!-- Título da Página -->
     <title>Protocolo Zero Barriga</title>
@@ -28,9 +50,11 @@
     </style>
     
    
-    
+  </head>
   <body>
-    
+    <a class="whatsapp-link" href="https://bit.ly/protocolozerobarria" target="_blank">
+      <i class="fa fa-whatsapp"></i>
+    </a>
     <header class="py-4">
       <div class="container">
         <div class="row justify-content-center">
@@ -45,7 +69,7 @@
             <script type="text/javascript" id="scr_6255d71b19625f000996af33">var s=document.createElement("script");s.src="https://cdn.converteai.net/7d488e83-1599-4fd5-b74e-fe310cc403b2/players/6255d71b19625f000996af33/player.js",s.async=!0,document.head.appendChild(s);</script>
 
             <!-- Botão 1 -->
-            <div id="cta1" class="mt-4 d-none">
+            <div id="cta1" class="mt-4">
               <a href="https://pay.kiwify.com.br/IpjvcIl" class="a-btn" style="text-decoration: none;">
                 <span class="span-btn">QUERO OBTER ACESSO!</span>
                 <span class="span-btn2">(atenção: vagas limitadas)</span>
@@ -422,7 +446,7 @@
               </div>
             </div>
             <!-- Botão 2 -->
-            <div id="cta2" class="mt-4 d-none">
+            <div id="btn-compra" class="mt-4 d-none">
               <a href="https://pay.kiwify.com.br/HkrDVPl" class="a-btn" style="text-decoration: none;">
                 <span class="span-btn">QUERO OBTER ACESSO!</span>
                 <span class="span-btn2">(atenção: vagas limitadas)</span>
@@ -438,48 +462,29 @@
       <div class="text-white"><a href="termos.html" class="text-white">Termos de Uso</a> | <a href="privacidade.html" class="text-white">Política de Privacidade</a></div>
     </footer>
 
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Botão WhatsApp - Canal TI</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <style>
-    .whatsapp-link {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 40px;
-      right: 40px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 1px 1px 2px #888;
-      z-index: 1000;
-    }
- 
-    .fa-whatsapp {
-      margin-top: 16px;
-    }
-  </style>
-</head>
-<body>
-  <a class="whatsapp-link" href="https://bit.ly/protocolozerobarria" target="_blank">
-    <i class="fa fa-whatsapp"></i>
-  </a>
-</body>
-</html>
-
-<script type="text/javascript">
-      setTimeout(() => {document.getElementById("cta1").classList.remove("d-none")}, 0 ); // temporização da Call to Action (em milissegundos)
+    <script type="text/javascript">
+      window.onload = function (){
+        document.getElementById("cta1").style.display = "none"
+        setTimeout(() => {
+          let video = document.getElementsByTagName("video")[0]
+          video.ontimeupdate = function(time) {
+            let currentTime = time.target.currentTime
+            var minutes = Math.floor(currentTime / 60)
+            var seconds = Math.floor((currentTime % 3600) % 60);
+  
+            if(minutes >= 19 && seconds >= 42 || minutes >= 20){
+              document.getElementById("cta1").style.display = "block"
+            } else {
+              document.getElementById("cta1").style.display = "none"
+            }
+          }
+        }, 2000)
+      }
     </script>
-
-
-
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="./assets/js/com.js"></script>
-  </body>
+</body>
 </html>
