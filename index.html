@@ -470,9 +470,15 @@
 </body>
 </html>
 
-   <script type="text/javascript">
-      setTimeout(() => {document.getElementById("cta1").classList.remove("d-none")}, 1140000); // temporização da Call to Action (em milissegundos)
-    </script>
+  <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<script>
+$('.delay').hide();
+setTimeout(function() {
+$('.delay').show();
+}, 1165200);
+</script>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
