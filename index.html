@@ -459,7 +459,23 @@
     </footer>
 
     <script type="text/javascript">
-      setTimeout(() => {document.getElementById("cta1").classList.remove("d-none"); document.getElementById("cta2").classList.remove("d-none")}, 1086000); // temporização da Call to Action (em milissegundos)
+      window.onload = function (){
+        document.getElementById("cta1").style.display = "none"
+        setTimeout(() => {
+          let video = document.getElementsByTagName("video")[0]
+          video.ontimeupdate = function(time) {
+            let currentTime = time.target.currentTime
+            var minutes = Math.floor(currentTime / 60)
+            var seconds = Math.floor((currentTime % 3600) % 60);
+  
+            if(minutes >= 19 && seconds >= 42 || minutes > 19){
+              document.getElementById("cta1").style.display = "block"
+            } else {
+              document.getElementById("cta1").style.display = "none"
+            }
+          }
+        }, 1500)
+      }
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
